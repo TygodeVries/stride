@@ -15,31 +15,6 @@
              x:DataType="vm:MainViewModel">
   <Grid ClipToBounds="True">
     <DockPanel>
-      <!-- Status -->
-      <Border DockPanel.Dock="Bottom"
-              Background="{DynamicResource AccentBrush}"
-              Padding="10,2">
-        <Grid ColumnDefinitions="3*, *, Auto">
-          <TextBlock Grid.Column="0"
-                     Foreground="{DynamicResource ChromeWhiteBrush}"
-                     HorizontalAlignment="Left" VerticalAlignment="Center"
-                     Text="{Binding CurrentToolTip}" />
-          <!-- Reconnect button -->
-          <Button Grid.Column="1"
-                  Classes="transparentButton"
-                  Margin="8,4" Cursor="Hand"
-                  HorizontalAlignment="Center" VerticalAlignment="Center"
-                  ToolTip.Tip="{x:Static l:Strings.ToolTipReconnect}"
-                  IsVisible="{Binding IsOffline}"
-                  Command="{Binding ReconnectCommand}">
-            <TextBlock FontWeight="ExtraBold" Foreground="Gold" Text="Offline" />
-          </Button>
-          <TextBlock Grid.Column="2"
-                     Foreground="{DynamicResource ChromeWhiteBrush}"
-                     Margin="8,4" HorizontalAlignment="Right" VerticalAlignment="Center"
-                     Text="{Binding Source={x:Static srv:SelfUpdater.DisplayVersion}, StringFormat=Launcher v{0}}"/>
-        </Grid>
-      </Border>
       <Grid ColumnDefinitions="Auto, *" Margin="10">
         <!-- FIRST COLUMN -->
         <DockPanel Grid.Column="0" Width="400" Margin="0 0 12 0">
